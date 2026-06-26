@@ -40,7 +40,7 @@ Start both the Vite development frontend server and Node backend server concurre
 npm run dev
 ```
 - **Frontend URL:** http://localhost:5173
-- **Backend API:** http://localhost:5000
+- **Backend API:** https://digiquest-studio.onrender.com
 
 ---
 

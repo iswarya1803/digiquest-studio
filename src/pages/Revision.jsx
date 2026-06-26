@@ -57,7 +57,7 @@ export default function Revision() {
     try {
       let res;
       try {
-        res = await fetch('http://localhost:5001/api/projects', { headers: { Authorization: `Bearer ${token}` } });
+        res = await fetch('https://digiquest-studio.onrender.com/api/projects', { headers: { Authorization: `Bearer ${token}` } });
       } catch (netErr) {
         res = await fetch('/api/projects', { headers: { Authorization: `Bearer ${token}` } });
       }

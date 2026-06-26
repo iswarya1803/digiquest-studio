@@ -40,7 +40,7 @@ export default function Signup({ onSignupSuccess, onBackToLogin }) {
         });
       } catch (netErr) {
         // fallback to direct backend URL if proxy or network prevented relative fetch
-        res = await fetch('http://localhost:5001/api/auth/signup', {
+        res = await fetch('https://digiquest-studio.onrender.com/api/auth/signup', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form)
@@ -59,7 +59,7 @@ export default function Signup({ onSignupSuccess, onBackToLogin }) {
           body: JSON.stringify({ email: form.email, password: form.password })
         });
       } catch (netErr) {
-        loginRes = await fetch('http://localhost:5001/api/auth/login', {
+        loginRes = await fetch('https://digiquest-studio.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: form.email, password: form.password })
