@@ -40,7 +40,7 @@ export default function ClientDashboard({ activeTab = 'client_dashboard' }) {
   /* ── Fetch ── */
   const fetchProjects = async () => {
     try {
-      const res  = await fetch('/api/projects', { headers: authH() });
+      const res  = await fetch('https://digiquest-studio.onrender.com/api/projects', { headers: authH() });
       if (res.ok) {
         const data = await res.json();
         setProjects(data);
@@ -71,7 +71,7 @@ export default function ClientDashboard({ activeTab = 'client_dashboard' }) {
     if (!createForm.title.trim()) { alert('Title is required'); return; }
     try {
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-      const res = await fetch('/api/projects', {
+      const res = await fetch('https://digiquest-studio.onrender.com/api/projects', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token()}` },
         body: JSON.stringify({ title: createForm.title, notes: createForm.notes, priority: createForm.priority, deadline: createForm.deadline, client_id: user.id })
@@ -191,7 +191,7 @@ export default function ClientDashboard({ activeTab = 'client_dashboard' }) {
 
   const submitFeedback = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/feedback', {
+    const res = await fetch('https://digiquest-studio.onrender.com/api/feedback', {
       method: 'POST',
       headers: authH({ 'Content-Type': 'application/json' }),
       body: JSON.stringify({ project_id: selectedProject.id, ...feedForm })

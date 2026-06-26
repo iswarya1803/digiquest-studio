@@ -19,7 +19,7 @@ export default function Navbar({ user, activeTab, onMenuClick }) {
     try {
       const token = localStorage.getItem('token');
       if (!token) return;
-      const res = await fetch('/api/notifications', {
+      const res = await fetch('https://digiquest-studio.onrender.com/api/notifications', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) setNotifications(await res.json());

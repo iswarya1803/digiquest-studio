@@ -38,7 +38,7 @@ export default function DigiAssist({ activeProject }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/chatbot', {
+      const res = await fetch('https://digiquest-studio.onrender.com/api/chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

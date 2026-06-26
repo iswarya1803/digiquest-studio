@@ -34,7 +34,7 @@ export default function ProjectForm({ project, onClose, onSave }) {
     }
 
     // Fetch clients list
-    fetch('/api/users?role=client', {
+    fetch('https://digiquest-studio.onrender.com/api/users?role=client', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.ok ? r.json() : [])

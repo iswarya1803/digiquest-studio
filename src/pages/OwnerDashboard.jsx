@@ -34,7 +34,7 @@ export default function OwnerDashboard() {
   async function fetchProjects() {
     setLoading(true);
     try {
-      const res = await fetch('/api/projects', {
+      const res = await fetch('https://digiquest-studio.onrender.com/api/projects', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {

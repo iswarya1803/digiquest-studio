@@ -45,7 +45,7 @@ export default function Revision() {
   async function fetchRevisions() {
     setLoading(true);
     try {
-      const res = await fetch('/api/revisions', {
+      const res = await fetch('https://digiquest-studio.onrender.com/api/revisions', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) setRevisions(await res.json());
@@ -59,7 +59,7 @@ export default function Revision() {
       try {
         res = await fetch('https://digiquest-studio.onrender.com/api/projects', { headers: { Authorization: `Bearer ${token}` } });
       } catch (netErr) {
-        res = await fetch('/api/projects', { headers: { Authorization: `Bearer ${token}` } });
+        res = await fetch('https://digiquest-studio.onrender.com/api/projects', { headers: { Authorization: `Bearer ${token}` } });
       }
       const pdata = res.ok ? await res.json() : [];
       if (res.status === 401) {

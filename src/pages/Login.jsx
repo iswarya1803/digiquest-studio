@@ -46,7 +46,7 @@ export default function Login({ onLoginSuccess, onShowSignup }) {
     e.preventDefault();
     setError(''); setLoading(true);
     try {
-      const res  = await fetch('/api/auth/login', {
+      const res  = await fetch('https://digiquest-studio.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -70,7 +70,7 @@ export default function Login({ onLoginSuccess, onShowSignup }) {
     e.preventDefault();
     setError(''); setMessage(''); setLoading(true);
     try {
-      const res  = await fetch('/api/auth/forgot-password', {
+      const res  = await fetch('https://digiquest-studio.onrender.com/api/auth/forgot-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: resetEmail })
@@ -96,7 +96,7 @@ export default function Login({ onLoginSuccess, onShowSignup }) {
     e.preventDefault();
     setError(''); setMessage(''); setLoading(true);
     try {
-      const res  = await fetch('/api/auth/reset-password', {
+      const res  = await fetch('https://digiquest-studio.onrender.com/api/auth/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: resetEmail, code: inputCode, newPassword: newPass })

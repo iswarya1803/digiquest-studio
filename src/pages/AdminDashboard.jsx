@@ -71,11 +71,11 @@ export default function AdminDashboard({ activeTab, setActiveTab }) {
     try {
       const h = headers();
       const [pR, cR, aR, lR, pfR] = await Promise.all([
-        fetch('/api/projects',  { headers: h }),
-        fetch('/api/clients',   { headers: h }),
-        fetch('/api/analytics', { headers: h }),
-        fetch('/api/logs',      { headers: h }),
-        fetch('/api/logs/pdf',   { headers: h })
+        fetch('https://digiquest-studio.onrender.com/api/projects',  { headers: h }),
+        fetch('https://digiquest-studio.onrender.com/api/clients',   { headers: h }),
+        fetch('https://digiquest-studio.onrender.com/api/analytics', { headers: h }),
+        fetch('https://digiquest-studio.onrender.com/api/logs',      { headers: h }),
+        fetch('https://digiquest-studio.onrender.com/api/logs/pdf',   { headers: h })
       ]);
       if (pR.ok) setProjects (await pR.json());
       if (cR.ok) setClients  (await cR.json());

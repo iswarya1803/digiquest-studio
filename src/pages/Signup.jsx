@@ -33,7 +33,7 @@ export default function Signup({ onSignupSuccess, onBackToLogin }) {
       // try relative path first (uses Vite proxy in dev)
       let res;
       try {
-        res = await fetch('/api/auth/signup', {
+        res = await fetch('https://digiquest-studio.onrender.com/api/auth/signup', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form)
@@ -53,7 +53,7 @@ export default function Signup({ onSignupSuccess, onBackToLogin }) {
       // Auto-login after signup — same fallback approach
       let loginRes;
       try {
-        loginRes = await fetch('/api/auth/login', {
+        loginRes = await fetch('https://digiquest-studio.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: form.email, password: form.password })

@@ -23,7 +23,7 @@ export default function App() {
 
       if (token && cachedUser) {
         try {
-          const res = await fetch('/api/auth/me', {
+          const res = await fetch('https://digiquest-studio.onrender.com/api/auth/me', {
             headers: { Authorization: `Bearer ${token}` }
           });
           if (res.ok) {

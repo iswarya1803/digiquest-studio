@@ -59,7 +59,7 @@ export default function NotificationToast() {
 
     // Also fetch existing notifications from API
     const token = localStorage.getItem('token');
-    fetch('/api/notifications', { headers: { Authorization: `Bearer ${token}` } })
+    fetch('https://digiquest-studio.onrender.com/api/notifications', { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.ok ? r.json() : [])
       .then(data => {
         if (Array.isArray(data)) {
@@ -90,7 +90,7 @@ export default function NotificationToast() {
     setUnread(0);
     // Mark all as read
     const token = localStorage.getItem('token');
-    fetch('/api/notifications/read-all', {
+    fetch('https://digiquest-studio.onrender.com/api/notifications/read-all', {
       method: 'PUT',
       headers: { Authorization: `Bearer ${token}` }
     }).catch(() => {});
